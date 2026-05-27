@@ -123,10 +123,10 @@ loop();
 const circle = document.getElementById('circle');
 
 circle.addEventListener('mouseenter', () => {
-  if (!activated) circle.style.transform = 'scale(0.88)';
+  if (!activated) portalImage.style.transform = 'scale(0.92)';
 });
 circle.addEventListener('mouseleave', () => {
-  if (!activated) circle.style.transform = 'scale(1)';
+  if (!activated) portalImage.style.transform = 'scale(1)';
 });
 
 // ── Activación ────────────────────────────────────────────────
@@ -148,7 +148,8 @@ function activate() {
 
   // Respirar
   setTimeout(() => {
-    circle.classList.add('breathing');
+    const portalImage = document.querySelector('.portal-image');
+    portalImage.classList.add('breathing');
 
     setTimeout(() => {
       msg.style.opacity   = '0';
