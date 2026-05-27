@@ -164,7 +164,7 @@ function activate() {
       canvas.style.transition = 'opacity 1s ease';
       canvas.style.opacity    = '0';
       setTimeout(() => {
-        window.location.href = 'index.html';
+        window.location.href = 'inicio.html';
       }, 1000);
     }, 6000);
 
