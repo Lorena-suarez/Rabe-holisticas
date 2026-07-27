@@ -364,3 +364,80 @@ em { color: var(--gold); font-style: italic; }
   .cards-grid { grid-template-columns: 1fr; }
   .stats { gap: 1rem; }
 }
+/* ── Curso destacado ── */
+.curso-card--featured { border-color: rgba(201,168,76,0.4); }
+.curso-badge--active {
+  background: var(--gold); color: #0e0e0e; border-color: var(--gold);
+  font-weight: 400;
+}
+.curso-teaser { color: #a09888; font-size: 0.88rem; line-height: 1.7; margin-bottom: 1.4rem; }
+
+.curso-meta { list-style: none; margin-bottom: 1.6rem; }
+.curso-meta li {
+  display: flex; justify-content: space-between; gap: 1rem;
+  font-size: 0.82rem; color: var(--text);
+  padding: 0.55rem 0; border-bottom: 1px solid var(--border);
+}
+.curso-meta li:last-child { border-bottom: none; }
+.curso-meta li span {
+  color: var(--gold); text-transform: uppercase;
+  letter-spacing: 0.1em; font-size: 0.68rem; flex-shrink: 0;
+}
+
+.curso-footer--featured { flex-direction: column; align-items: flex-start; gap: 1rem; }
+.curso-precio small { font-size: 0.6em; color: var(--text-dim); font-weight: 300; }
+.curso-btns { display: flex; gap: 0.8rem; flex-wrap: wrap; width: 100%; }
+.curso-btns .btn-gold-sm { background: none; cursor: pointer; font-family: 'Jost', sans-serif; }
+
+.btn-whatsapp-sm {
+  display: inline-flex; align-items: center;
+  padding: 0.5rem 1.3rem;
+  background: #25D366; color: #fff; text-decoration: none;
+  font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+  border-radius: 2px; transition: background 0.3s, transform 0.2s;
+}
+.btn-whatsapp-sm:hover { background: #1db855; transform: translateY(-2px); }
+
+/* ── Modal ── */
+.modal-overlay {
+  display: none; position: fixed; inset: 0; z-index: 200;
+  background: rgba(8,8,8,0.85); backdrop-filter: blur(4px);
+  align-items: center; justify-content: center;
+  padding: 2rem 1rem;
+}
+.modal-overlay.active { display: flex; }
+.modal-box {
+  background: var(--bg2); border: 1px solid var(--border);
+  max-width: 640px; width: 100%; max-height: 85vh; overflow-y: auto;
+  padding: 3rem 2.5rem; position: relative; border-radius: 2px;
+}
+.modal-close {
+  position: absolute; top: 1.2rem; right: 1.2rem;
+  background: none; border: none; color: var(--text-dim);
+  font-size: 1.6rem; line-height: 1; cursor: pointer;
+  transition: color 0.3s;
+}
+.modal-close:hover { color: var(--gold); }
+.modal-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 2rem;
+  margin: 1.5rem 0 2rem; padding: 1.2rem 0;
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+}
+.modal-grid div { font-size: 0.85rem; color: var(--text); }
+.modal-grid span {
+  display: block; color: var(--gold); text-transform: uppercase;
+  letter-spacing: 0.1em; font-size: 0.65rem; margin-bottom: 0.3rem;
+}
+.modal-subtitle { color: var(--gold-lt); margin: 1.8rem 0 0.8rem; font-size: 1.05rem; }
+.modal-list { list-style: none; }
+.modal-list li {
+  color: #a09888; font-size: 0.88rem; line-height: 1.75;
+  padding-left: 1.2rem; position: relative; margin-bottom: 0.6rem;
+}
+.modal-list li::before { content: '✦'; position: absolute; left: 0; color: var(--gold); font-size: 0.7rem; top: 0.3rem; }
+.modal-list li strong { color: var(--text); }
+
+@media (max-width: 600px) {
+  .modal-grid { grid-template-columns: 1fr; }
+  .modal-box { padding: 2rem 1.5rem; }
+}

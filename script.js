@@ -36,3 +36,22 @@ burger.addEventListener('click', () => {
   navLinks.style.padding = '2rem';
   navLinks.style.gap = '1.5rem';
 });
+// ── Modal cursos ────────────────────────────────────────────
+function openModal(id) {
+  document.getElementById(id).classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeModal(overlay.id);
+  });
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.active').forEach(m => closeModal(m.id));
+  }
+});
