@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Raleway:wght@200;300&display=swap');
 
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -97,7 +98,7 @@
   --circle-glow: #2d6b47;
   --circle-border: #3a8a5a;
   --text: #c8dfd0;
-  --text-dim: rgba(180, 210, 195, 0.45);
+  --text-dim: rgba(255, 179, 0, 0.9);
   --particle: rgba(180, 220, 200, 0.6);
 }
 
@@ -197,11 +198,13 @@ canvas#particles {
   color: var(--text-dim);
   text-transform: uppercase;
   transition: opacity 1s ease;
+  text-shadow: 0 0 15px rgba(230, 195, 110, 0.45);
 }
 
 .hint span {
-  color: rgba(180, 220, 200, 0.75);
-  border: 1px solid rgba(180, 220, 200, 0.3);
+  color: rgba(255, 220, 130, 1);
+  border: 1px solid rgba(255, 220, 130, 0.65);
+  text-shadow: 0 0 12px rgba(255, 220, 130, 0.45);
   padding: 1px 7px;
   border-radius: 3px;
   font-size: 0.7rem;
