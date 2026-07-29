@@ -126,14 +126,73 @@ em { color: var(--gold); font-style: italic; }
   margin-bottom: 2.5rem;
 }
 .hero-scroll {
-  position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
-  z-index: 2;
+    position: absolute;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%);
 }
+
 .hero-scroll span {
-  display: block; width: 1px; height: 50px; margin: 0 auto;
-  background: linear-gradient(to bottom, var(--gold), transparent);
-  animation: scrollLine 2s ease-in-out infinite;
+    position: relative;
+    display: block;
+
+    width: 2px;
+    height: 50px;
+
+    background: #c9a84c;
+
+    animation: arrowDown 2s ease-in-out infinite;
 }
+
+/* Punta izquierda */
+.hero-scroll span::before{
+    content: "";
+    position: absolute;
+    bottom: 0.5px;
+    left: -5.7px;
+
+    width: 7px;
+    height: 2px;
+
+    background: #c9a84c;
+
+    transform: rotate(45deg);
+    transform-origin: right center;
+}
+
+/* Punta derecha */
+.hero-scroll span::after{
+    content: "";
+    position: absolute;
+    bottom: -0.2px;
+    right: -5.5px;
+
+    width: 7px;
+    height: 2px;
+
+    background: #c9a84c;
+
+    transform: rotate(-45deg);
+    transform-origin: left center;
+}
+@keyframes arrowDown{
+
+    0%{
+        opacity:0;
+        transform:translateY(-8px);
+    }
+
+    40%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+        transform:translateY(12px);
+    }
+
+}
+
 @keyframes scrollLine {
   0%   { transform: scaleY(0); transform-origin: top; }
   50%  { transform: scaleY(1); transform-origin: top; }

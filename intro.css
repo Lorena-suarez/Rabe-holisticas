@@ -88,7 +88,7 @@
 }
 
 .portal-image.breathing {
-  animation: breatheImage 1.4s ease-in-out 2;
+  animation: breatheImage 1.2s ease-in-out 2;
 }
 
 :root {
@@ -220,7 +220,7 @@ canvas#particles {
 
 /* ── Fade out de la escena completa ── */
 .scene.fade-out {
-  animation: fadeOut 1s ease forwards;
+  animation: fadeOut 0.2s ease forwards;
 }
 
 @keyframes fadeOut {

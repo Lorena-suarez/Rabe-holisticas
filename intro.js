@@ -139,37 +139,48 @@ function activate() {
   if (activated) return;
   activated = true;
 
-  // Restaurar tamaño del círculo antes de la animación
   circle.style.transform = 'scale(1)';
   hint.style.opacity = '0';
 
-  // Partículas vuelan al centro
-  particles.forEach(p => { p.arriving = true; });
+  // partículas al centro
+  particles.forEach(p => { 
+    p.arriving = true; 
+  });
 
-  // Respirar
+  const portalImage = document.querySelector('.portal-image');
+
+  // empieza respiración inmediatamente
+  portalImage.classList.add('breathing');
+
+
+  // Cambiar texto
   setTimeout(() => {
-    const portalImage = document.querySelector('.portal-image');
-    portalImage.classList.add('breathing');
+
+    msg.style.opacity = '0';
+    msg.style.transform = 'translateY(-12px)';
+
+    msgSec.style.opacity = '1';
+    msgSec.style.transform = 'translateY(0)';
+
+  }, 1200);
+
+
+
+  // salir de la intro
+  setTimeout(() => {
+
+    scene.classList.add('fade-out');
+
+    canvas.style.transition = 'opacity 0.5s ease';
+    canvas.style.opacity = '0';
+
 
     setTimeout(() => {
-      msg.style.opacity   = '0';
-      msg.style.transform = 'translateY(-12px)';
-      setTimeout(() => {
-        msgSec.style.opacity   = '1';
-        msgSec.style.transform = 'translateY(0)';
-      }, 400);
-    }, 1800);
+      window.location.href = 'inicio.html';
+    }, 500);
 
-    setTimeout(() => {
-      scene.classList.add('fade-out');
-      canvas.style.transition = 'opacity 1s ease';
-      canvas.style.opacity    = '0';
-      setTimeout(() => {
-        window.location.href = 'inicio.html';
-      }, 1000);
-    }, 6000);
 
-  }, 800);
+  }, 2800);
 }
 
 document.addEventListener('keydown', e => { if (e.key === 'Enter') activate(); });
